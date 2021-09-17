@@ -16,8 +16,14 @@ var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 var specialK = ['!', '@', '#','$','%','^','&','*','(', ')', '-','_','=','+']
 
-// define password length
-var passwordLength = window.prompt('How many characters would you like for you password?');
+var yes = "yes";
+var no = "no";
+
+
+
+//function for generating password
+
+function generatePassword()  {
 
 
 //options randomly
@@ -37,16 +43,40 @@ var index4 = Math.floor(Math.random() * specialK.length);
 
 var computerChoice4 = specialK[index4];
 
+//userChoice
+var userChoice1 = window.prompt("Would you like letters?");
 
-//function for generating password
-
-function generatePassword(lowerCase, upperCase, numbers, specialK) {
-    if (passwordLength) {
-        
-    } else if (passwordLength < 8 || passwordLength > 128) {
-        window.alert('Error: please select a length between 8 and 128');
-    } else if ()
+if (userChoice1 === yes) {
+    computerChoice1();
+    computerChoice2();
+} else (userChoice1  === no); {
+    window.alert("ok no problem")
 }
+
+var userChoice2 = window.prompt("Would you like numbers?");
+
+if (userChoice2 === yes) {
+    computerChoice3();
+
+} else (userChoice2 === no); {
+    window.alert("ok no problem");
+}
+
+var userChoice3 = window.prompt("Would you like special characters?");
+
+if (userChoice3 === yes) {
+    computerChoice4();
+} else (userChoice === no); {
+    window.alert("ok no problem");
+}
+
+window.alert("Your password is" + userChoice1 + userChoice2 + userChoice3);
+
+
+}
+
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
